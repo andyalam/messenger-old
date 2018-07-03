@@ -1,0 +1,28 @@
+import { getRepository } from "typeorm";
+import { NextFunction, Request, Response } from "express";
+import { User } from "../entity/User";
+
+export class UserController {
+
+  private userRepository = getRepository(User);
+
+  async all(request: Request, response: Response, next: NextFunction) {
+    return this.userRepository.find();
+  }
+
+  async one(request: Request, response: Response, next: NextFunction) {
+    return this.userRepository.findOne(request.params.id);
+  }
+
+  async save(request: Request, response: Response, next: NextFunction) {
+    return this.userRepository.save(request.body);
+  }
+
+  async remove(request: Request, response: Response, next: NextFunction) {
+    // https://github.com/typeorm/typeorm/issues/1767
+    await this.userRepository.remove(
+      this.userRepository.create({ id: request.params.id })
+    );
+  }
+
+}
