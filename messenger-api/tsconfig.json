@@ -10,6 +10,12 @@
       "outDir": "./build",
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
-      "sourceMap": true
+      "sourceMap": true,
+      "baseUrl": "src",
+      "paths": {
+        "@messenger-controller/*": ["controller/*"],
+        "@messenger-entity/*": ["entity/*"],
+        "@messenger-config/*": ["config/*"]
+      }
    }
 }

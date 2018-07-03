@@ -3,18 +3,28 @@
    "version": "0.0.1",
    "description": "Awesome project developed with TypeORM.",
    "devDependencies": {
-      "ts-node": "3.3.0",
       "@types/node": "^8.0.29",
+      "@types/passport": "^0.4.5",
+      "@types/passport-jwt": "^3.0.1",
+      "ts-node": "3.3.0",
+      "tslint": "^5.10.0",
       "typescript": "2.5.2"
    },
    "dependencies": {
-      "typeorm": "0.2.7",
-      "reflect-metadata": "^0.1.10",
-      "pg": "^7.3.0",
+      "@types/lodash": "^4.14.110",
+      "body-parser": "^1.18.1",
+      "dotenv": "^6.0.0",
       "express": "^4.15.4",
-      "body-parser": "^1.18.1"
+      "lodash": "^4.17.10",
+      "passport": "^0.4.0",
+      "passport-jwt": "^4.0.0",
+      "pg": "^7.3.0",
+      "reflect-metadata": "^0.1.10",
+      "typeorm": "0.2.7"
    },
    "scripts": {
-      "start": "ts-node src/index.ts"
+      "start": "ts-node src/index.ts",
+      "dev": "tsc --watch & nodemon dist",
+      "build": "tsc"
    }
 }
